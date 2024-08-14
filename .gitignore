@@ -1,0 +1,10 @@
+/allure-results
+.env.emulator
+.env
+.env.bstack
+.env.local_device
+.idea
+__pycache__/
+.DS_Store
+tests/allure-results
+tests/android_app/allure-results
