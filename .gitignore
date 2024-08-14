@@ -1,7 +1,7 @@
 /allure-results
-.env.emulator
-.env
-.env.bstack
+#.env.emulator
+#.env
+#.env.bstack
 .env.local_device
 .idea
 __pycache__/

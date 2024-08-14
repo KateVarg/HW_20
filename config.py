@@ -1,16 +1,10 @@
 import os
 from appium.options.android import UiAutomator2Options
 from hw_20.utils import path
-from dotenv import load_dotenv
-
-
-load_dotenv()
 
 
 def driver_options(context):
     options = UiAutomator2Options()
-    dotenv_path = path.abs_path_from_project(f'.env.{context}')
-    load_dotenv(dotenv_path)
 
     if context == 'bstack':
         options.set_capability('remote_url', os.getenv("REMOTE_URL_BSTACK"))
@@ -24,7 +18,7 @@ def driver_options(context):
                 'buildName': 'browserstack-build-1',
                 'sessionName': 'BStack first_test',
 
-                'userName': os.getenv("USERNAME"),
+                'userName': os.getenv("USER_NAME"),
                 'accessKey': os.getenv("ACCESS-KEY")
             })
 
@@ -33,9 +27,5 @@ def driver_options(context):
         options.set_capability('deviceName', os.getenv("DEVICE_NAME"))
         options.set_capability('appWaitActivity', os.getenv('APP_WAIT_ACTIVITY'))
         options.set_capability('app', path.abs_path_from_project(os.getenv("APP")))
-
-        print(f"REMOTE_URL: {os.getenv('REMOTE_URL')}")
-        print(f"DEVICE_NAME: {os.getenv('DEVICE_NAME')}")
-        print(f"APP: {path.abs_path_from_project(os.getenv('APP'))}")
 
     return options

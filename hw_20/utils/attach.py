@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-user_name = os.getenv("USERNAME")
+user_name = os.getenv("USER_NAME")
 access_key = os.getenv("ACCESS-KEY")
 
 
@@ -36,6 +36,6 @@ def add_video(browser):
         f'<source src="{video_url}" type="video/mp4">'
         '</video>'
         '</body></html>',
-        name='video recording',
+        name='video url',
         attachment_type=allure.attachment_type.HTML,
     )
