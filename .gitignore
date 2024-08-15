@@ -1,6 +1,6 @@
 /allure-results
 #.env.emulator
-#.env
+.env
 #.env.bstack
 .env.local_device
 .idea
